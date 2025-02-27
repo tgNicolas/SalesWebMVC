@@ -1,0 +1,38 @@
+﻿@model IEnumerable<SalesWebMVC.Models.Departaments>
+
+@{
+    ViewBag.Title = "Departaments";
+}
+
+<h2>Departaments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+
+    </tr>
+
+@foreach (var Dep in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem2 => Dep.Id)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => Dep.Name)
+    </td>
+
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = Dep.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = Dep.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = Dep.Id })
+    </td>
+</tr>
+}
+
+</table>
